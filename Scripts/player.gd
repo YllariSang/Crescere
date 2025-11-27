@@ -271,13 +271,22 @@ func _start_crouch_tween(crouch: bool) -> void:
 	var target_scale = original_sprite_scale * CROUCH_SCALE if crouch else original_sprite_scale
 	var target_sprite_pos = original_sprite_position
 	# compute target collision scale & position early so we can align the sprite bottom to the collision bottom
-	var target_collision_scale: Vector2 = original_collision_scale * CROUCH_SCALE if crouch else original_collision_scale
-	var delta_y = 0.0
-	if original_shape_size != Vector2.ZERO:
-		var current_scale_y = original_collision_scale.y
-		var target_scale_y = target_collision_scale.y
-		delta_y = original_shape_size.y * (current_scale_y - target_scale_y) * 0.5
-	var target_collision_pos: Vector2 = original_collision_position + Vector2(0, delta_y) if crouch else original_collision_position
+	# Determine which collision node/values should be used as the "active" hitbox
+	var target_collision_scale: Vector2
+	var target_collision_pos: Vector2
+	if crouch and crouch_collision and crouch_collision.shape:
+		# If a separate crouch collision shape exists, use its designed position/scale
+		target_collision_pos = crouch_collision.position
+		target_collision_scale = crouch_collision.scale
+	else:
+		# Otherwise compute a scaled standing collision and shift it so the bottom stays aligned
+		target_collision_scale = original_collision_scale * CROUCH_SCALE if crouch else original_collision_scale
+		var delta_y = 0.0
+		if original_shape_size != Vector2.ZERO:
+			var current_scale_y = original_collision_scale.y
+			var target_scale_y = target_collision_scale.y
+			delta_y = original_shape_size.y * (current_scale_y - target_scale_y) * 0.5
+		target_collision_pos = original_collision_position + Vector2(0, delta_y) if crouch else original_collision_position
 	if sprite_node:
 		# if this is a `Sprite2D` we can use its texture size to compute the bottom offset
 		if sprite_node is Sprite2D and sprite_node.texture:
@@ -332,19 +341,19 @@ func _start_crouch_tween(crouch: bool) -> void:
 			target_zoom = original_camera_zoom
 		tween.tween_property(camera_node, "zoom", target_zoom, CROUCH_TRANSITION)
 
-	# handle collision by scaling the collision node (smooth scale and move)
-	# handle collision: apply immediately for responsive gameplay
-	# If there's a separate `crouch_collision` shape, swap shapes immediately.
-	# Otherwise, scale & move the standing collision immediately so physics reacts this frame.
+	# handle collision by switching/scaling the collision node immediately so physics reacts this frame.
 	if standing_collision and standing_collision.shape:
-		if crouch_collision:
-			# use the separate shape nodes if provided
+		if crouch_collision and crouch_collision.shape:
+			# Use the separate shape if available. Compute sprite alignment from the active shape.
 			if crouch:
+				# activate crouch collision; leave its authored position/scale intact
 				_enable_crouch_shape()
 			else:
+				# restore standing collision; use standing collision's position/scale
 				_disable_crouch_shape()
+			# Note: target_collision_pos already reflects the active shape used above
 		else:
-			# apply the precomputed collision target values immediately so physics sees the new hitbox this frame
+			# No separate shape: apply the computed target scale/position to the standing collision
 			standing_collision.scale = target_collision_scale
 			standing_collision.position = target_collision_pos
 

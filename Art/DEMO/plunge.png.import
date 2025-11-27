@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6iw8guhrvxox"
-path="res://.godot/imported/idle.png-d9fd33a95f248c1055335f2aaaaef55d.ctex"
+uid="uid://b0ecl5adrry2q"
+path="res://.godot/imported/plunge.png-8519cbb8933237a127d56383ac44647c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/idle.png"
-dest_files=["res://.godot/imported/idle.png-d9fd33a95f248c1055335f2aaaaef55d.ctex"]
+source_file="res://Art/DEMO/plunge.png"
+dest_files=["res://.godot/imported/plunge.png-8519cbb8933237a127d56383ac44647c.ctex"]
 
 [params]
 

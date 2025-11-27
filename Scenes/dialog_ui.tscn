@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3gru50qbqqc0"]
+
+[ext_resource type="Script" uid="uid://db45ijubqo5dk" path="res://Scripts/dialog_manager.gd" id="1_oixmp"]
+
+[node name="DialogUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="DialogManager" type="CanvasLayer" parent="."]
+script = ExtResource("1_oixmp")
+
+[node name="Panel" type="Panel" parent="DialogManager"]
+offset_left = 230.0
+offset_top = 196.0
+offset_right = 270.0
+offset_bottom = 236.0
+
+[node name="Label" type="Label" parent="DialogManager/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b646leh2imcqq"
-path="res://.godot/imported/crouch.png-bde382d9c7f034259285c85a7cfeed52.ctex"
+uid="uid://bxudxdrm0yk0s"
+path="res://.godot/imported/dash.png-995a466586357d54ea0e56dc20b38fb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/crouch.png"
-dest_files=["res://.godot/imported/crouch.png-bde382d9c7f034259285c85a7cfeed52.ctex"]
+source_file="res://Art/DEMO/dash.png"
+dest_files=["res://.godot/imported/dash.png-995a466586357d54ea0e56dc20b38fb8.ctex"]
 
 [params]
 
