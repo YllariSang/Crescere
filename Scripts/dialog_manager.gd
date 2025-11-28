@@ -1,26 +1,37 @@
 extends CanvasLayer
 
-@onready var panel: Node = null
-@onready var label: Label = null
+@onready var panel: Panel = null
+@onready var label: RichTextLabel = null
 
 func _ready() -> void:
-	# If this script is used as an Autoload scene, ensure children exist.
-	# The user can create a `Panel` with a `Label` as children and attach this script.
+	# Look up the nodes and start hidden
 	panel = get_node_or_null("Panel")
-	label = get_node_or_null("Panel/Label")
+	label = get_node_or_null("Panel/RichTextLabel")
 	if panel:
 		panel.visible = false
 
-func show_dialogue(text: String) -> void:
-	# Basic dialog display: set text, show panel, wait for `ui_accept` to close.
-	if label:
-		label.text = text
-	if panel:
-		panel.visible = true
-	# Simple async wait for player confirm
+func show_dialogue(text: String, typing_speed := 0.0) -> void:
+	# Display dialog with optional typing effect (seconds per character).
+	if not label or not panel:
+		return
+
+	panel.visible = true
+	label.clear()
+	label.bbcode_enabled = true
+
+	if typing_speed > 0.0:
+		# Type character-by-character
+		for i in text.length():
+			label.append_text(text[i])
+			await get_tree().create_timer(typing_speed).timeout
+	else:
+		# Show instantly (safe for BBCode by escaping)
+		# If the text contains BBCode intentionally, pass it through `append_bbcode` instead.
+		label.append_text(text)
+
+	# Wait for player confirm
 	await _wait_for_accept()
-	if panel:
-		panel.visible = false
+	panel.visible = false
 
 func _wait_for_accept() -> void:
 	while true:

@@ -100,6 +100,9 @@ func _ready() -> void:
 	last_safe_position = global_position
 	if has_node("Camera2D"):
 		camera_node = $Camera2D
+		# Ensure this camera is the active camera so Parallax nodes respond to movement
+		if camera_node and not camera_node.is_current():
+			camera_node.make_current()
 		original_camera_zoom = camera_node.zoom
 
 
