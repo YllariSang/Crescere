@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://litm0pb4jx8c"]
+[gd_scene load_steps=26 format=3 uid="uid://litm0pb4jx8c"]
 
 [ext_resource type="Script" uid="uid://cdg17agqmbs1l" path="res://Scripts/player.gd" id="1_1jxqw"]
-[ext_resource type="Texture2D" uid="uid://bjr5y8nt3sy2y" path="res://Art/spritemn.png" id="2_3smsa"]
-[ext_resource type="Texture2D" uid="uid://b0ecl5adrry2q" path="res://Art/DEMO/plunge.png" id="6_ivps1"]
+[ext_resource type="Texture2D" uid="uid://bjr5y8nt3sy2y" path="res://Assets/spritemn.png" id="2_3smsa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
 atlas = ExtResource("2_3smsa")
@@ -71,6 +70,14 @@ region = Rect2(0, 512, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_l6n3p"]
 atlas = ExtResource("2_3smsa")
 region = Rect2(128, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
+atlas = ExtResource("2_3smsa")
+region = Rect2(512, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpjfl"]
+atlas = ExtResource("2_3smsa")
+region = Rect2(640, 256, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
 atlas = ExtResource("2_3smsa")
@@ -160,7 +167,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_ivps1")
+"texture": SubResource("AtlasTexture_cvnsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpjfl")
 }],
 "loop": true,
 "name": &"plunge",
@@ -188,11 +198,15 @@ JUMP_VELOCITY = -400.0
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_ukyrk")
-animation = &"idle"
+animation = &"plunge"
 autoplay = "idle"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="animation_changed" from="Sprite2D" to="." method="_on_sprite_2d_animation_changed"]

@@ -565,3 +565,7 @@ func die() -> void:
 	is_crouching = false
 	# ensure animation state is refreshed
 	_update_animation()
+
+
+func _on_sprite_2d_animation_changed() -> void:
+	pass # Replace with function body.

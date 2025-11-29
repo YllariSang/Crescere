@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://v8ovvj854151"]
 
-[ext_resource type="Texture2D" uid="uid://dj5kaq4qedbmg" path="res://Art/eye.png" id="1_dxrjs"]
-[ext_resource type="Texture2D" uid="uid://c6ww8ck5agost" path="res://Art/iris.png" id="2_avcuq"]
+[ext_resource type="Texture2D" uid="uid://dj5kaq4qedbmg" path="res://Assets/eye.png" id="1_dxrjs"]
+[ext_resource type="Texture2D" uid="uid://c6ww8ck5agost" path="res://Assets/iris.png" id="2_avcuq"]
 [ext_resource type="Script" uid="uid://2j8bm1wdiaax" path="res://Scripts/eye.gd" id="3_eye_script"]
-[ext_resource type="Texture2D" uid="uid://ckg34q07c4kdj" path="res://Art/VFX/gradient.jpg" id="4_ay2kl"]
+[ext_resource type="Texture2D" uid="uid://ckg34q07c4kdj" path="res://Assets/VFX/gradient.jpg" id="4_ay2kl"]
 
 [node name="Eye" type="Node2D"]
 script = ExtResource("3_eye_script")

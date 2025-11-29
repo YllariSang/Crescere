@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://etpc2i3imilk"]
 
 [ext_resource type="Script" uid="uid://cx1pxamvqi0op" path="res://Scripts/block.gd" id="1_xfwl5"]
-[ext_resource type="Texture2D" uid="uid://cgb58e14q4yww" path="res://Art/block.png" id="2_8o1l4"]
+[ext_resource type="Texture2D" uid="uid://cgb58e14q4yww" path="res://Assets/block.png" id="2_8o1l4"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8o1l4"]
 polygon = PackedVector2Array(-63.999992, -63.999992, -63.999992, 63.999992, 63.999992, 63.999992, 63.999992, -63.999992)

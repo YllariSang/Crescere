@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bf73iwth6nbef"]
 
 [ext_resource type="Script" uid="uid://crsl6jopm4yrp" path="res://Scripts/coin.gd" id="1_0t63x"]
-[ext_resource type="Texture2D" uid="uid://dj34cf1ec1fqd" path="res://Art/coinmoon.png" id="2_jgi06"]
-[ext_resource type="Texture2D" uid="uid://ckg34q07c4kdj" path="res://Art/VFX/gradient.jpg" id="3_g537i"]
+[ext_resource type="Texture2D" uid="uid://dj34cf1ec1fqd" path="res://Assets/coinmoon.png" id="2_jgi06"]
+[ext_resource type="Texture2D" uid="uid://ckg34q07c4kdj" path="res://Assets/VFX/gradient.jpg" id="3_g537i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g537i"]
 atlas = ExtResource("2_jgi06")

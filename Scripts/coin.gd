@@ -2,7 +2,12 @@ extends Node2D
 
 @onready var area: Area2D = $Area2D
 
+@onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+# Guard to ensure the coin is only collected once (prevents double-counting)
+var _collected: bool = false
 
 func _ready() -> void:
 	if area:
@@ -11,6 +16,10 @@ func _ready() -> void:
 func _on_body_entered(body: Node) -> void:
 	if not body or not body.is_in_group("player"):
 		return
+	# If this coin was already collected, ignore additional signals
+	if _collected:
+		return
+	_collected = true
 	# Prevent further pickups
 	if area:
 		area.monitoring = false
