@@ -298,6 +298,39 @@ rotation = -3.1415925
 scale = Vector2(0.79338187, 0.79338187)
 texture = ExtResource("6_fevyy")
 
+[node name="Cthl5" type="CanvasLayer" parent="Backgrounds/Cthl"]
+layer = 0
+follow_viewport_enabled = true
+follow_viewport_scale = 1.305
+
+[node name="Cthl" type="Sprite2D" parent="Backgrounds/Cthl/Cthl5"]
+modulate = Color(0.12347304, 0.12347304, 0.12347304, 1)
+position = Vector2(2153.534, 4053.1094)
+rotation = -3.1415925
+scale = Vector2(0.79338187, 0.79338187)
+texture = ExtResource("6_fevyy")
+
+[node name="Cthl2" type="Sprite2D" parent="Backgrounds/Cthl/Cthl5"]
+modulate = Color(0.12347304, 0.12347304, 0.12347304, 1)
+position = Vector2(2515.4226, 4053.1094)
+rotation = -3.1415925
+scale = Vector2(0.79338187, 0.79338187)
+texture = ExtResource("6_fevyy")
+
+[node name="Cthl3" type="Sprite2D" parent="Backgrounds/Cthl/Cthl5"]
+modulate = Color(0.12347304, 0.12347304, 0.12347304, 1)
+position = Vector2(2872.328, 4053.1094)
+rotation = -3.1415925
+scale = Vector2(0.79338187, 0.79338187)
+texture = ExtResource("6_fevyy")
+
+[node name="Cthl4" type="Sprite2D" parent="Backgrounds/Cthl/Cthl5"]
+modulate = Color(0.12347304, 0.12347304, 0.12347304, 1)
+position = Vector2(3234.2166, 4053.1094)
+rotation = -3.1415925
+scale = Vector2(0.79338187, 0.79338187)
+texture = ExtResource("6_fevyy")
+
 [node name="Cthl2" type="CanvasLayer" parent="Backgrounds/Cthl"]
 layer = -2
 follow_viewport_enabled = true
@@ -470,7 +503,7 @@ tile_map_data = PackedByteArray("AADE/wgAAAABAAAAAADF/wgAAAABAAAAAADG/wgAAAABAAA
 tile_set = SubResource("TileSet_344ge")
 
 [node name="Player" parent="." instance=ExtResource("2_7mycd")]
-position = Vector2(-3488, 220)
+position = Vector2(2057, 3809)
 JUMP_VELOCITY = -550.0
 crouch_sprite_offset_y = 14.8
 PLUNGE_DURATION = 10000.0
@@ -538,9 +571,6 @@ scale = Vector2(0.6791527, 0.6791527)
 theme_override_fonts/font = ExtResource("13_k12tt")
 theme_override_font_sizes/font_size = 73
 text = "Fragments: 0"
-
-[node name="DialogueTrigger" parent="." instance=ExtResource("6_21xkr")]
-position = Vector2(-831, 2411)
 
 [node name="Warning" type="Node2D" parent="."]
 
@@ -650,742 +680,742 @@ energy = 1.21
 shadow_enabled = true
 texture = ExtResource("10_wsu2k")
 
-[node name="Eyes" type="Node2D" parent="."]
+[node name="RedEyes" type="Node2D" parent="."]
 
-[node name="Eye" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(608, 3536)
 
-[node name="Eye78" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye78" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1816, 3451)
 
-[node name="Eye79" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye79" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1745, 3428)
 
-[node name="Eye80" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye80" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1817, 3399)
 
-[node name="Eye81" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye81" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1800, 3357)
 
-[node name="Eye82" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye82" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1684, 3404)
 
-[node name="Eye83" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye83" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1540, 3438)
 
-[node name="Eye84" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye84" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(529, 3456)
 
-[node name="Eye85" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye85" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1737, 3371)
 
-[node name="Eye86" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye86" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1666, 3348)
 
-[node name="Eye87" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye87" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1738, 3319)
 
-[node name="Eye88" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye88" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1721, 3277)
 
-[node name="Eye98" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye98" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1814, 3312)
 
-[node name="Eye99" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye99" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1587, 3391)
 
-[node name="Eye100" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye100" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1527, 3365)
 
-[node name="Eye101" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye101" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1392, 3423)
 
-[node name="Eye102" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye102" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1310, 3421)
 
-[node name="Eye103" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye103" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1371, 3371)
 
-[node name="Eye104" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye104" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1806, 3545)
 
-[node name="Eye89" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye89" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1605, 3324)
 
-[node name="Eye90" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye90" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1461, 3358)
 
-[node name="Eye91" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye91" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(529, 3456)
 
-[node name="Eye92" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye92" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1737, 3371)
 
-[node name="Eye93" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye93" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1666, 3348)
 
-[node name="Eye94" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye94" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1738, 3319)
 
-[node name="Eye95" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye95" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1721, 3277)
 
-[node name="Eye96" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye96" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1605, 3324)
 
-[node name="Eye97" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye97" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1461, 3358)
 
-[node name="Eye17" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye17" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(721, 3536)
 
-[node name="Eye18" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye18" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(776, 3561)
 
-[node name="Eye19" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye19" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(872, 3508)
 
-[node name="Eye20" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye20" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(487, 3452)
 
-[node name="Eye21" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye21" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(551, 3496)
 
-[node name="Eye22" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye22" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(618, 3436)
 
-[node name="Eye23" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye23" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(640, 3483)
 
-[node name="Eye24" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye24" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(737, 3438)
 
-[node name="Eye25" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye25" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(779, 3473)
 
-[node name="Eye26" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye26" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(973, 3548)
 
-[node name="Eye27" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye27" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(860, 3549)
 
-[node name="Eye28" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye28" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(920, 3439)
 
-[node name="Eye29" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye29" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1057, 3484)
 
-[node name="Eye30" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye30" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1137, 3539)
 
-[node name="Eye31" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye31" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1056, 3550)
 
-[node name="Eye32" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye32" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1178, 3441)
 
-[node name="Eye33" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye33" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(958, 3496)
 
-[node name="Eye34" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye34" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1223, 3549)
 
-[node name="Eye35" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye35" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1198, 3494)
 
-[node name="Eye36" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye36" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1274, 3461)
 
-[node name="Eye37" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye37" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1293, 3514)
 
-[node name="Eye38" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye38" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1363, 3549)
 
-[node name="Eye39" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye39" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1447, 3524)
 
-[node name="Eye40" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye40" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1521, 3551)
 
-[node name="Eye41" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye41" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1591, 3483)
 
-[node name="Eye42" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye42" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1599, 3547)
 
-[node name="Eye43" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye43" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1700, 3469)
 
-[node name="Eye44" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye44" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1677, 3524)
 
-[node name="Eye45" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye45" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1734, 3555)
 
-[node name="Eye46" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye46" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1779, 3501)
 
-[node name="Eye47" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye47" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1365, 3475)
 
-[node name="Eye48" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye48" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1468, 3421)
 
-[node name="Eye49" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye49" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1449, 3466)
 
-[node name="Eye50" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye50" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1515, 3494)
 
-[node name="Eye51" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye51" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1620, 3434)
 
-[node name="Eye2" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye2" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(552, 3803)
 max_offset = Vector2(10, 5)
 
-[node name="Eye3" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye3" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(426, 3814)
 max_offset = Vector2(10, 5)
 
-[node name="Eye6" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye6" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(499, 3903)
 max_offset = Vector2(10, 5)
 
-[node name="Eye7" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye7" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(352, 3942)
 max_offset = Vector2(10, 5)
 
-[node name="Eye8" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye8" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(613, 3856)
 max_offset = Vector2(10, 5)
 
-[node name="Eye52" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye52" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(503, 3850)
 max_offset = Vector2(10, 5)
 
-[node name="Eye53" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye53" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(688, 3877)
 max_offset = Vector2(10, 5)
 
-[node name="Eye54" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye54" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(788, 3893)
 max_offset = Vector2(10, 5)
 
-[node name="Eye55" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye55" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(894, 3869)
 max_offset = Vector2(10, 5)
 
-[node name="Eye56" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye56" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(999, 3843)
 max_offset = Vector2(10, 5)
 
-[node name="Eye57" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye57" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1057, 3796)
 max_offset = Vector2(10, 5)
 
-[node name="Eye58" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye58" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1071, 3846)
 max_offset = Vector2(10, 5)
 
-[node name="Eye59" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye59" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1230, 3798)
 max_offset = Vector2(10, 5)
 
-[node name="Eye60" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye60" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1196, 3854)
 max_offset = Vector2(10, 5)
 
-[node name="Eye61" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye61" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1115, 3896)
 max_offset = Vector2(10, 5)
 
-[node name="Eye62" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye62" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1192, 3910)
 max_offset = Vector2(10, 5)
 
-[node name="Eye63" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye63" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1266, 3865)
 max_offset = Vector2(10, 5)
 
-[node name="Eye64" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye64" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1303, 3810)
 max_offset = Vector2(10, 5)
 
-[node name="Eye65" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye65" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1359, 3862)
 max_offset = Vector2(10, 5)
 
-[node name="Eye66" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye66" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1401, 3806)
 max_offset = Vector2(10, 5)
 
-[node name="Eye67" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye67" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1451, 3856)
 max_offset = Vector2(10, 5)
 
-[node name="Eye68" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye68" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1296, 3914)
 max_offset = Vector2(10, 5)
 
-[node name="Eye69" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye69" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1501, 3808)
 max_offset = Vector2(10, 5)
 
-[node name="Eye70" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye70" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1533, 3861)
 max_offset = Vector2(10, 5)
 
-[node name="Eye71" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye71" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1614, 3805)
 max_offset = Vector2(10, 5)
 
-[node name="Eye72" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye72" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1411, 3910)
 max_offset = Vector2(10, 5)
 
-[node name="Eye73" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye73" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1601, 3849)
 max_offset = Vector2(10, 5)
 
-[node name="Eye74" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye74" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1688, 3795)
 max_offset = Vector2(10, 5)
 
-[node name="Eye75" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye75" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1667, 3829)
 max_offset = Vector2(10, 5)
 
-[node name="Eye76" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye76" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1752, 3831)
 max_offset = Vector2(10, 5)
 
-[node name="Eye77" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye77" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1797, 3802)
 max_offset = Vector2(10, 5)
 
-[node name="Eye105" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye105" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1816, 3844)
 max_offset = Vector2(10, 5)
 
-[node name="Eye106" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye106" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1763, 3875)
 max_offset = Vector2(10, 5)
 
-[node name="Eye107" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye107" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1690, 3866)
 max_offset = Vector2(10, 5)
 
-[node name="Eye108" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye108" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1813, 3908)
 max_offset = Vector2(10, 5)
 
-[node name="Eye109" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye109" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1731, 3917)
 max_offset = Vector2(10, 5)
 
-[node name="Eye110" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye110" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1659, 3902)
 max_offset = Vector2(10, 5)
 
-[node name="Eye111" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye111" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1592, 3895)
 max_offset = Vector2(10, 5)
 
-[node name="Eye112" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye112" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1352, 3945)
 max_offset = Vector2(10, 5)
 
-[node name="Eye113" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye113" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1484, 3901)
 max_offset = Vector2(10, 5)
 
-[node name="Eye114" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye114" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1534, 3930)
 max_offset = Vector2(10, 5)
 
-[node name="Eye115" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye115" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1601, 3949)
 max_offset = Vector2(10, 5)
 
-[node name="Eye116" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye116" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1668, 3955)
 max_offset = Vector2(10, 5)
 
-[node name="Eye117" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye117" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1806, 3955)
 max_offset = Vector2(10, 5)
 
-[node name="Eye118" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye118" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1737, 3973)
 max_offset = Vector2(10, 5)
 
-[node name="Eye119" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye119" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1799, 4006)
 max_offset = Vector2(10, 5)
 
-[node name="Eye120" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye120" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1713, 4021)
 max_offset = Vector2(10, 5)
 
-[node name="Eye121" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye121" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1656, 3997)
 max_offset = Vector2(10, 5)
 
-[node name="Eye122" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye122" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1575, 3989)
 max_offset = Vector2(10, 5)
 
-[node name="Eye123" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye123" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1502, 3970)
 max_offset = Vector2(10, 5)
 
-[node name="Eye124" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye124" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1431, 3955)
 max_offset = Vector2(10, 5)
 
-[node name="Eye125" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye125" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1380, 3988)
 max_offset = Vector2(10, 5)
 
-[node name="Eye126" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye126" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1304, 3975)
 max_offset = Vector2(10, 5)
 
-[node name="Eye127" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye127" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1242, 3952)
 max_offset = Vector2(10, 5)
 
-[node name="Eye128" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye128" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1442, 4006)
 max_offset = Vector2(10, 5)
 
-[node name="Eye129" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye129" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1517, 4030)
 max_offset = Vector2(10, 5)
 
-[node name="Eye130" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye130" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1584, 4042)
 max_offset = Vector2(10, 5)
 
-[node name="Eye131" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye131" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1652, 4052)
 max_offset = Vector2(10, 5)
 
-[node name="Eye132" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye132" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1743, 4065)
 max_offset = Vector2(10, 5)
 
-[node name="Eye133" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye133" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1806, 4049)
 max_offset = Vector2(10, 5)
 
-[node name="Eye134" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye134" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(961, 3891)
 max_offset = Vector2(10, 5)
 
-[node name="Eye135" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye135" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(865, 3916)
 max_offset = Vector2(10, 5)
 
-[node name="Eye136" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye136" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1425, 4109)
 max_offset = Vector2(10, 5)
 
-[node name="Eye137" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye137" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1516, 4122)
 max_offset = Vector2(10, 5)
 
-[node name="Eye138" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye138" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1579, 4106)
 max_offset = Vector2(10, 5)
 
-[node name="Eye139" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye139" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(734, 3948)
 max_offset = Vector2(10, 5)
 
-[node name="Eye140" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye140" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(638, 3973)
 max_offset = Vector2(10, 5)
 
-[node name="Eye141" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye141" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1374, 4072)
 max_offset = Vector2(10, 5)
 
-[node name="Eye142" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye142" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1663, 4140)
 max_offset = Vector2(10, 5)
 
-[node name="Eye143" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye143" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1528, 4069)
 max_offset = Vector2(10, 5)
 
-[node name="Eye144" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye144" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(683, 3911)
 max_offset = Vector2(10, 5)
 
-[node name="Eye145" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye145" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(587, 3936)
 max_offset = Vector2(10, 5)
 
-[node name="Eye157" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye157" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1448, 4058)
 max_offset = Vector2(10, 5)
 
-[node name="Eye146" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye146" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1589, 4171)
 max_offset = Vector2(10, 5)
 
-[node name="Eye147" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye147" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1680, 4184)
 max_offset = Vector2(10, 5)
 
-[node name="Eye148" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye148" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1743, 4168)
 max_offset = Vector2(10, 5)
 
-[node name="Eye158" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye158" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1789, 4140)
 max_offset = Vector2(10, 5)
 
-[node name="Eye159" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye159" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1616, 4210)
 max_offset = Vector2(10, 5)
 
-[node name="Eye160" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye160" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1677, 4227)
 max_offset = Vector2(10, 5)
 
-[node name="Eye161" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye161" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1740, 4208)
 max_offset = Vector2(10, 5)
 
-[node name="Eye162" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye162" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1804, 4190)
 max_offset = Vector2(10, 5)
 
-[node name="Eye163" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye163" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1797, 4237)
 max_offset = Vector2(10, 5)
 
-[node name="Eye164" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye164" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1732, 4254)
 max_offset = Vector2(10, 5)
 
-[node name="Eye165" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye165" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1623, 4256)
 max_offset = Vector2(10, 5)
 
-[node name="Eye170" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye170" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1478, 4214)
 max_offset = Vector2(10, 5)
 
-[node name="Eye171" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye171" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1433, 4187)
 max_offset = Vector2(10, 5)
 
-[node name="Eye172" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye172" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1391, 4150)
 max_offset = Vector2(10, 5)
 
-[node name="Eye173" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye173" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1356, 4116)
 max_offset = Vector2(10, 5)
 
-[node name="Eye174" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye174" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1395, 4222)
 max_offset = Vector2(10, 5)
 
-[node name="Eye175" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye175" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1366, 4191)
 max_offset = Vector2(10, 5)
 
-[node name="Eye176" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye176" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1377, 4032)
 max_offset = Vector2(10, 5)
 
-[node name="Eye166" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye166" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1565, 4237)
 max_offset = Vector2(10, 5)
 
-[node name="Eye167" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye167" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1544, 4203)
 max_offset = Vector2(10, 5)
 
-[node name="Eye168" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye168" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1528, 4163)
 max_offset = Vector2(10, 5)
 
-[node name="Eye169" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye169" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1463, 4151)
 max_offset = Vector2(10, 5)
 
-[node name="Eye149" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye149" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(898, 4010)
 max_offset = Vector2(10, 5)
 
-[node name="Eye156" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye156" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(898, 4010)
 max_offset = Vector2(10, 5)
 
-[node name="Eye150" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye150" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(802, 4035)
 max_offset = Vector2(10, 5)
 
-[node name="Eye151" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye151" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1649, 4098)
 max_offset = Vector2(10, 5)
 
-[node name="Eye152" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye152" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1740, 4111)
 max_offset = Vector2(10, 5)
 
-[node name="Eye153" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye153" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1803, 4095)
 max_offset = Vector2(10, 5)
 
-[node name="Eye154" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye154" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(958, 3937)
 max_offset = Vector2(10, 5)
 
-[node name="Eye155" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye155" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(862, 3962)
 max_offset = Vector2(10, 5)
 
-[node name="Eye9" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye9" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(758, 3956)
 max_offset = Vector2(10, 5)
 
-[node name="Eye10" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye10" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(874, 3822)
 max_offset = Vector2(10, 5)
 
-[node name="Eye11" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye11" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1030, 3911)
 max_offset = Vector2(10, 5)
 
-[node name="Eye12" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye12" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1134, 3814)
 max_offset = Vector2(10, 5)
 
-[node name="Eye13" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye13" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(942, 3793)
 max_offset = Vector2(10, 5)
 
-[node name="Eye14" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye14" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(770, 3793)
 max_offset = Vector2(10, 5)
 
-[node name="Eye15" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye15" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(727, 3830)
 max_offset = Vector2(10, 5)
 
-[node name="Eye16" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye16" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(800, 3837)
 max_offset = Vector2(10, 5)
 
-[node name="Eye4" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye4" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(662, 3800)
 max_offset = Vector2(10, 5)
 
-[node name="Eye5" parent="Eyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye5" parent="RedEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(678, 3559)
 
-[node name="FrontEyes" type="CanvasLayer" parent="Eyes"]
+[node name="FrontEyes" type="CanvasLayer" parent="RedEyes"]
 follow_viewport_enabled = true
 follow_viewport_scale = 4.485
 
-[node name="Eye6" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye6" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(518.8406, 3607.5808)
 
-[node name="Eye7" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye7" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(641.2486, 3612.4858)
 
-[node name="Eye8" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye8" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(580.82495, 3596.4326)
 
-[node name="Eye9" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye9" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(698.55066, 3592.419)
 
-[node name="Eye10" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye10" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(816.9453, 3612.932)
 
-[node name="Eye11" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye11" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(878.2608, 3615.3845)
 
-[node name="Eye12" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye12" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(942.4749, 3622.0735)
 
-[node name="Eye18" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye18" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1139.1304, 3606.6892)
 
-[node name="Eye19" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye19" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1261.5385, 3611.5942)
 
-[node name="Eye20" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye20" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1201.1147, 3595.541)
 
-[node name="Eye21" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye21" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1318.8405, 3591.5273)
 
-[node name="Eye22" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye22" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1437.2351, 3612.0403)
 
-[node name="Eye23" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye23" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1498.5507, 3614.493)
 
-[node name="Eye24" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye24" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1562.7648, 3621.182)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Eyes/FrontEyes"]
+[node name="CanvasModulate" type="CanvasModulate" parent="RedEyes/FrontEyes"]
 color = Color(0.21950102, 0.21950102, 0.21950102, 1)
 
-[node name="Eye5" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye5" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(511.92862, 3681.1594)
 max_offset = Vector2(10, 5)
 
-[node name="Eye13" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye13" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(576.36566, 3676.477)
 max_offset = Vector2(10, 5)
 
-[node name="Eye14" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye14" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(631.4381, 3686.5107)
 max_offset = Vector2(10, 5)
 
-[node name="Eye15" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye15" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(734.22516, 3678.0378)
 max_offset = Vector2(10, 5)
 
-[node name="Eye16" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye16" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(807.8038, 3701.2263)
 max_offset = Vector2(10, 5)
 
-[node name="Eye17" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye17" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(888.29425, 3685.8416)
 max_offset = Vector2(10, 5)
 
-[node name="Eye25" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye25" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1259.5317, 3681.1594)
 max_offset = Vector2(10, 5)
 
-[node name="Eye26" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye26" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1323.9688, 3676.477)
 max_offset = Vector2(10, 5)
 
-[node name="Eye27" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye27" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1379.041, 3686.5107)
 max_offset = Vector2(10, 5)
 
-[node name="Eye28" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye28" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1481.8281, 3678.0378)
 max_offset = Vector2(10, 5)
 
-[node name="Eye29" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye29" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1555.4067, 3701.2263)
 max_offset = Vector2(10, 5)
 
-[node name="Eye30" parent="Eyes/FrontEyes" instance=ExtResource("17_h1bgf")]
+[node name="Eye30" parent="RedEyes/FrontEyes" instance=ExtResource("17_h1bgf")]
 position = Vector2(1635.8972, 3685.8416)
 max_offset = Vector2(10, 5)
 
@@ -1424,8 +1454,32 @@ position = Vector2(3783, 4651.0005)
 scale = Vector2(2.0473897, 2.0473897)
 texture = ExtResource("8_6iyac")
 
-[node name="Front" type="Node2D" parent="."]
+[node name="Front" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.5
 
 [node name="Front" parent="Front" instance=ExtResource("6_b3802")]
 light_mask = 0
 position = Vector2(105, 3607)
+color = Color(0, 0, 0, 1)
+
+[node name="Dialogues" type="Node2D" parent="."]
+
+[node name="DialogueTrigger" parent="Dialogues" instance=ExtResource("6_21xkr")]
+position = Vector2(2261, 3915)
+scale = Vector2(1.3498452, 9.010495)
+dialogue_text = "Disgusting as always..."
+
+[node name="DialogueTrigger2" parent="Dialogues" instance=ExtResource("6_21xkr")]
+position = Vector2(-3576, 495)
+dialogue_text = "..."
+
+[node name="DialogueTrigger3" parent="Dialogues" instance=ExtResource("6_21xkr")]
+position = Vector2(-3832, 5290)
+scale = Vector2(-2.583532, 2.1853826)
+dialogue_text = "I might need these..."
+
+[node name="DialogueTrigger4" parent="Dialogues" instance=ExtResource("6_21xkr")]
+position = Vector2(520, 3719)
+scale = Vector2(-2.583532, 2.1853826)
+dialogue_text = "Better not look..."

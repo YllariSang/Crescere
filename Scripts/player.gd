@@ -3,6 +3,7 @@ extends CharacterBody2D
 var is_dashing = false
 var can_dash = true
 var dash_direction: Vector2 = Vector2.ZERO
+var input_enabled: bool = true
 
 const DASH_SPEED = 1200.0
 const DASH_DURATION = 0.12
@@ -97,6 +98,16 @@ func _ready() -> void:
 
 	# Ensure player is in the `player` group so pressure plates detect it
 	add_to_group("player")
+	# Debug: print group membership and collision info so triggers can detect the player
+	print("[Player] ready - name=", name, "global_pos=", global_position)
+	if has_method("get_groups"):
+		print("[Player] groups=", get_groups())
+	print("[Player] is_in_group('player')=", is_in_group("player"))
+	# Collision layer/mask may be on the physics body
+	if "collision_layer" in self:
+		print("[Player] collision_layer=", collision_layer, "collision_mask=", collision_mask)
+	if has_node("CollisionShape2D"):
+		print("[Player] has CollisionShape2D at", $CollisionShape2D.position)
 	# initialize respawn point to current position
 	last_safe_position = global_position
 	if has_node("Camera2D"):
@@ -119,6 +130,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	# Physics always runs so the player continues to be affected by gravity
+	# and other physics while input may be disabled by external systems.
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -160,7 +174,7 @@ func _physics_process(delta: float) -> void:
 			jump_buffer_time_left = 0.0
 
 	# Handle jump hold (variable jump height)
-	if is_holding_jump and jump_hold_time_left > 0.0 and Input.is_action_pressed("ui_accept") and not is_on_floor():
+	if input_enabled and is_holding_jump and jump_hold_time_left > 0.0 and Input.is_action_pressed("ui_accept") and not is_on_floor():
 		var strength = JUMP_HOLD_STRENGTH
 		if _jump_was_crouched:
 			strength = JUMP_HOLD_STRENGTH_CROUCH
@@ -173,7 +187,7 @@ func _physics_process(delta: float) -> void:
 		jump_hold_time_left = 0.0
 
 	# Handle jump input with coyote time and jump buffering.
-	if Input.is_action_just_pressed("ui_accept"):
+	if input_enabled and Input.is_action_just_pressed("ui_accept"):
 		# If we can jump immediately (on floor or within coyote window), do it.
 		if is_on_floor() or coyote_time_left > 0.0:
 			_do_jump()
@@ -187,7 +201,7 @@ func _physics_process(delta: float) -> void:
 		jump_buffer_time_left = 0.0
 
 	# If jump button released early, cut the upward velocity so jump is smaller
-	if Input.is_action_just_released("ui_accept"):
+	if input_enabled and Input.is_action_just_released("ui_accept"):
 		if is_holding_jump:
 			is_holding_jump = false
 			jump_hold_time_left = 0.0
@@ -196,7 +210,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle crouch input (toggle). Requires InputMap action `crouch`.
 	# Toggle crouch on press so player can hold or lock crouch.
-	if Input.is_action_just_pressed("crouch"):
+	if input_enabled and Input.is_action_just_pressed("crouch"):
 		is_crouching = not is_crouching
 		if is_crouching:
 			crouch_state = CROUCH_STATE_ENTERING
@@ -217,12 +231,12 @@ func _physics_process(delta: float) -> void:
 		pass
 
 	# Plunge input (requires InputMap action `plunge`). Allow while crouched; must be airborne.
-	if Input.is_action_just_pressed("plunge") and can_plunge and not is_on_floor():
+	if input_enabled and Input.is_action_just_pressed("plunge") and can_plunge and not is_on_floor():
 		_start_plunge()
 
 
 	# Handle dash input (requires an InputMap action named "dash")
-	if Input.is_action_just_pressed("dash") and can_dash:
+	if input_enabled and Input.is_action_just_pressed("dash") and can_dash:
 		# Determine dash direction from player input or facing
 		var input_dir := Input.get_axis("left", "right")
 		var dir_x := 0.0
@@ -259,14 +273,18 @@ func _physics_process(delta: float) -> void:
 		velocity.y = PLUNGE_SPEED
 	else:
 		# Get the input direction and handle the movement/deceleration.
-		# As good practice, you should replace UI actions with custom gameplay actions.
-		var direction := Input.get_axis("left", "right")
-		if direction:
-			velocity.x = direction * SPEED
-			# update facing when player provides horizontal input
-			_update_facing_from_dir(direction)
+		# When input is disabled we keep processing physics but ignore player controls.
+		if input_enabled:
+			var direction := Input.get_axis("left", "right")
+			if direction:
+				velocity.x = direction * SPEED
+				# update facing when player provides horizontal input
+				_update_facing_from_dir(direction)
+			else:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			# keep current horizontal velocity (or gently decelerate)
+			velocity.x = move_toward(velocity.x, 0, SPEED * 0.25)
 
 	move_and_slide()
 
@@ -515,6 +533,18 @@ func _update_facing_from_dir(dir_x: float) -> void:
 		sprite_node.scale = cur_scale
 	# record facing state
 	facing_right = should_face_right
+
+
+func set_input_enabled(enabled: bool) -> void:
+	# Public API for external systems to enable/disable player input.
+	input_enabled = enabled
+	if not enabled:
+		# stop horizontal movement and cancel dashes/plunges, but keep vertical velocity
+		velocity.x = 0.0
+		is_dashing = false
+		dash_time_left = 0.0
+		is_plunging = false
+		plunge_time_left = 0.0
 
 
 func _restore_after_crouch_tween(tween: Tween) -> void:

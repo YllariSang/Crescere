@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3gru50qbqqc0"]
+[gd_scene load_steps=4 format=3 uid="uid://b3gru50qbqqc0"]
 
 [ext_resource type="Script" uid="uid://db45ijubqo5dk" path="res://Scripts/dialog_manager.gd" id="1_oixmp"]
+[ext_resource type="FontFile" uid="uid://bx5yalsgmp38n" path="res://Assets/Font/Jersey10-Regular.ttf" id="2_dy63b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oixmp"]
+bg_color = Color(0.16078432, 0, 0.33333334, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.16078432, 0, 0.10980392, 1)
 
 [node name="DialogUI" type="Control"]
 layout_mode = 3
@@ -10,12 +19,31 @@ anchors_preset = 0
 script = ExtResource("1_oixmp")
 
 [node name="Panel" type="Panel" parent="DialogManager"]
-offset_left = 230.0
-offset_top = 196.0
-offset_right = 270.0
-offset_bottom = 236.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -176.0
+offset_right = 150.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oixmp")
 
 [node name="Label" type="Label" parent="DialogManager/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -17.0
+offset_right = 20.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_dy63b")
+theme_override_font_sizes/font_size = 30

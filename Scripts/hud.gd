@@ -20,6 +20,11 @@ func _ready() -> void:
 	else:
 		push_warning("HUD: could not find Game node to connect to")
 
+	# If a Transition autoload exists, request a fade-in so the scene appears smoothly.
+	if get_tree().root.has_node("Transition"):
+		var transition_node = get_tree().root.get_node("Transition")
+		transition_node.fade_in()
+
 func _on_coins_changed(fragments: int) -> void:
 	print("HUD: fragments_changed -> %d" % fragments)
 	if fragments_label:

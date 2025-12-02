@@ -19,7 +19,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Game="res://Scripts/game_state.gd"
-DialogManager="res://Scenes/DialogUI.tscn"
+DialogManager="*res://Scripts/dialog_manager.gd"
+Transition="*res://Scripts/Transition.gd"
 
 [global]
 

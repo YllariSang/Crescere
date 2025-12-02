@@ -33,6 +33,12 @@ func _ready() -> void:
 	if quit_btn:
 		quit_btn.connect("pressed", Callable(self, "_on_quit_pressed"))
 
+	# If the Transition autoload exists, request a fade-in when the menu is ready.
+	if get_tree().root.has_node("Transition"):
+		var transition_node = get_tree().root.get_node("Transition")
+		# fire-and-forget fade in so menu elements appear smoothly
+		transition_node.fade_in()
+
 func apply_skin() -> void:
 	if menu_theme:
 		theme = menu_theme
@@ -65,7 +71,13 @@ func _find_texturerect_recursive(node: Node) -> TextureRect:
 
 func _on_play_pressed() -> void:
 	if play_scene:
-		# Some Godot builds/environments may not expose SceneTree.change_scene_to.
+		# If a Transition autoload is present, use it to fade out, change scene, then fade back in.
+		if get_tree().root.has_node("Transition"):
+			var transition_node = get_tree().root.get_node("Transition")
+			await transition_node.fade_and_change_scene(play_scene)
+			return
+
+		# Fallback: Some Godot builds/environments may not expose SceneTree.change_scene_to.
 		# Instantiate the PackedScene and swap it in as the current scene instead.
 		if play_scene is PackedScene:
 			var new_scene = play_scene.instantiate()
