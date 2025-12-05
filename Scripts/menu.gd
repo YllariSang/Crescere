@@ -38,6 +38,9 @@ func _ready() -> void:
 		var transition_node = get_tree().root.get_node("Transition")
 		# fire-and-forget fade in so menu elements appear smoothly
 		transition_node.fade_in()
+	# If an AudioManager autoload exists, ensure the menu music is playing.
+	if get_tree().root.has_node("AudioManager"):
+		get_tree().root.get_node("AudioManager").play("menu")
 
 func apply_skin() -> void:
 	if menu_theme:
@@ -71,6 +74,10 @@ func _find_texturerect_recursive(node: Node) -> TextureRect:
 
 func _on_play_pressed() -> void:
 	if play_scene:
+		# Tell the AudioManager to switch to game music (if present)
+		if get_tree().root.has_node("AudioManager"):
+			get_tree().root.get_node("AudioManager").play("game")
+
 		# If a Transition autoload is present, use it to fade out, change scene, then fade back in.
 		if get_tree().root.has_node("Transition"):
 			var transition_node = get_tree().root.get_node("Transition")
@@ -99,3 +106,7 @@ func _on_options_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_menu_center_menu_box_play_button_pressed() -> void:
+	pass # Replace with function body.

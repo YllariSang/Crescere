@@ -1,6 +1,6 @@
 extends Node
 
-@export var fade_time: float = 0.4
+@export var fade_time: float = 0.6
 
 var canvas: CanvasLayer
 var color_rect: ColorRect

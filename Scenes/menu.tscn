@@ -1,11 +1,89 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlrjoo7ovbh47"]
+[gd_scene load_steps=14 format=3 uid="uid://dlrjoo7ovbh47"]
 
 [ext_resource type="Script" uid="uid://bffmwiicqdwhs" path="res://Scripts/menu.gd" id="1_lti8b"]
+[ext_resource type="VideoStream" uid="uid://7iig2nqii7w3" path="res://Assets/menu (1).ogv" id="2_xhh6f"]
+[ext_resource type="FontFile" uid="uid://bx5yalsgmp38n" path="res://Assets/Font/Jersey10-Regular.ttf" id="3_cayip"]
+[ext_resource type="Texture2D" uid="uid://bp0owbgbitvi0" path="res://Assets/Title.png" id="4_wwsa2"]
+[ext_resource type="PackedScene" uid="uid://bf73iwth6nbef" path="res://Scenes/coin.tscn" id="5_jsrd8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
+bg_color = Color(0.02745098, 0.015686275, 0.16862746, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.26666668, 0.18039216, 0.7921569, 1)
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cayip"]
+bg_color = Color(0.0028983185, 0.0016577403, 0.032944195, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.095260076, 0.049582966, 0.34531942, 1)
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsrd8"]
+bg_color = Color(0.17324296, 0.12703085, 0.5721374, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.4044601, 0.3941066, 0.963527, 1)
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_158mb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwsa2"]
+bg_color = Color(0.02745098, 0.015686275, 0.16862746, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.26666668, 0.18039216, 0.7921569, 1)
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbdvm"]
+bg_color = Color(0.003921569, 0, 0.03137255, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.09411765, 0.050980393, 0.34509805, 1)
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3rjx"]
+bg_color = Color(0.17254902, 0.1254902, 0.57254905, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.40392157, 0.39215687, 0.9647059, 1)
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cayip"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_lti8b")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+stream = ExtResource("2_xhh6f")
+speed_scale = 0.5
+autoplay = true
+loop = true
+buffering_msec = 1000
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -21,24 +99,56 @@ alignment = 1
 
 [node name="Menu_Center_MenuBox#PlayButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 479.0
-offset_top = 212.0
-offset_right = 520.0
-offset_bottom = 243.0
+offset_left = 251.0
+offset_top = 263.0
+offset_right = 363.0
+offset_bottom = 353.0
+scale = Vector2(0.7873335, 0.7873335)
+theme_override_colors/font_color = Color(0.49868095, 0.96806604, 0.9320725, 1)
+theme_override_colors/font_pressed_color = Color(0.15089357, 0.62501323, 0.5972576, 1)
+theme_override_colors/font_hover_color = Color(0.82990915, 0.9889948, 0.97286993, 1)
+theme_override_fonts/font = ExtResource("3_cayip")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_158mb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cayip")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jsrd8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_158mb")
 text = "Play"
 
 [node name="Menu_Center_MenuBox#OptionsButton" type="Button" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 490.0
-offset_top = 269.0
-offset_right = 560.0
-offset_bottom = 300.0
+offset_left = 188.0
+offset_top = 316.0
+offset_right = 389.0
+offset_bottom = 406.0
+theme_override_fonts/font = ExtResource("3_cayip")
+theme_override_font_sizes/font_size = 75
 text = "Options"
 
 [node name="Menu_Center_MenuBox#QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 531.0
-offset_top = 347.0
-offset_right = 573.0
-offset_bottom = 378.0
+offset_left = 252.0
+offset_top = 376.0
+offset_right = 360.0
+offset_bottom = 466.0
+scale = Vector2(0.7873335, 0.7873335)
+theme_override_colors/font_color = Color(0.49803922, 0.96862745, 0.93333334, 1)
+theme_override_colors/font_pressed_color = Color(0.14901961, 0.62352943, 0.59607846, 1)
+theme_override_colors/font_hover_color = Color(0.83137256, 0.9882353, 0.972549, 1)
+theme_override_fonts/font = ExtResource("3_cayip")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_wwsa2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wbdvm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q3rjx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cayip")
 text = "Quit"
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(380.0902, 151.03873)
+scale = Vector2(3.318962, 3.318962)
+texture = ExtResource("4_wwsa2")
+
+[node name="Coin" parent="." instance=ExtResource("5_jsrd8")]
+position = Vector2(157.00002, 226.00002)
+scale = Vector2(2.4097848, 2.4097848)

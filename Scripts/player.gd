@@ -9,7 +9,7 @@ var input_enabled: bool = true
 
 const DASH_SPEED = 1200.0
 const DASH_DURATION = 0.12
-const DASH_COOLDOWN = 0.6
+const DASH_COOLDOWN = 0.3
 
 var dash_time_left: float = 0.0
 var dash_cooldown_left: float = 0.0
@@ -76,6 +76,10 @@ var can_plunge: bool = true
 # Last safe position (used for respawning after death)
 var last_safe_position: Vector2 = Vector2.ZERO
 @onready var sfx_player: AudioStreamPlayer2D = null
+# Optional explicit checkpoint set by `Checkpoint` nodes. When present,
+# this will be preferred over `last_safe_position` when respawning.
+var checkpoint_position: Vector2 = Vector2.ZERO
+var has_checkpoint: bool = false
 
 var _input_was_enabled: bool = true
 var _paused_for_dialogue: bool = false
@@ -631,14 +635,21 @@ func _process(delta: float) -> void:
 
 func set_checkpoint(pos: Vector2) -> void:
 	# Explicit API other nodes can call to set the player's respawn point.
-	last_safe_position = pos
+	checkpoint_position = pos
+	has_checkpoint = true
+	print("[Player] checkpoint set to:", checkpoint_position)
 
 
 func die() -> void:
 	# Debug: announce death and target respawn
-	print("[Player] die() called. Respawning to:", last_safe_position)
-	# Teleport player back to last safe position and reset transient state
-	global_position = last_safe_position
+	var preferred = last_safe_position
+	if has_checkpoint:
+		preferred = checkpoint_position
+	print("[Player] die() called. Preferred respawn:", preferred, " (checkpoint=", has_checkpoint, ")")
+	# Choose a safe respawn position (try checkpoint or last safe, then nudge up if needed)
+	var target_pos: Vector2 = _find_safe_respawn(preferred)
+	# Teleport player back to resolved safe position and reset transient state
+	global_position = target_pos
 	velocity = Vector2.ZERO
 	is_dashing = false
 	dash_time_left = 0.0
@@ -652,6 +663,48 @@ func die() -> void:
 	is_crouching = false
 	# ensure animation state is refreshed
 	_update_animation()
+
+
+func _position_overlaps_danger(pos: Vector2) -> bool:
+	# Uses direct space queries to see if the given position collides with any
+	# bodies/areas on the `danger` collision layer (we set spikes to layer 1).
+	# Returns true if any collision was found at the point.
+	var dss = get_world_2d().direct_space_state
+	# Try a point query first (small margin). If API signature differs on your
+	# Godot version adjust accordingly.
+	var params = PhysicsPointQueryParameters2D.new()
+	params.position = pos
+	# collision mask 1 checks layer 1 (spikes)
+	params.collision_mask = 1
+	var result = dss.intersect_point(params, 4)
+	return result.size() > 0
+
+
+func _find_safe_respawn(preferred: Vector2) -> Vector2:
+	# If the preferred location overlaps a danger (spike), try to nudge upward
+	# in small steps to find a nearby safe spot. If none found, fall back to
+	# `preferred` and log a warning.
+	if not _position_overlaps_danger(preferred):
+		return preferred
+
+	var attempt_pos = preferred
+	var step = Vector2(0, -16) # move up 16 pixels each attempt
+	var max_attempts = 12
+	for i in range(max_attempts):
+		attempt_pos += step
+		if not _position_overlaps_danger(attempt_pos):
+			print("[Player] found safe respawn after", i+1, "nudges")
+			return attempt_pos
+
+	# Last resort: try moving horizontally a bit as well
+	for dx in [-16, 16, -32, 32]:
+		var test_pos = preferred + Vector2(dx, -16)
+		if not _position_overlaps_danger(test_pos):
+			print("[Player] found safe respawn by horizontal nudge dx=", dx)
+			return test_pos
+
+	print("[Player] WARNING: could not find safe respawn near", preferred)
+	return preferred
 
 
 func _on_sprite_2d_animation_changed() -> void:

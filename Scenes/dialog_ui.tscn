@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3gru50qbqqc0"]
+[gd_scene load_steps=8 format=3 uid="uid://b3gru50qbqqc0"]
 
 [ext_resource type="Script" uid="uid://db45ijubqo5dk" path="res://Scripts/dialog_manager.gd" id="1_oixmp"]
 [ext_resource type="FontFile" uid="uid://bx5yalsgmp38n" path="res://Assets/Font/Jersey10-Regular.ttf" id="2_dy63b"]
@@ -11,6 +11,28 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.16078432, 0, 0.10980392, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqatb"]
+atlas = ExtResource("3_yqatb")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kymi5"]
+atlas = ExtResource("3_yqatb")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5t5tq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqatb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kymi5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="DialogUI" type="Control"]
 layout_mode = 3
@@ -49,7 +71,8 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_dy63b")
 theme_override_font_sizes/font_size = 30
 
-[node name="Mdpfp" type="Sprite2D" parent="DialogManager/Panel"]
-position = Vector2(-47, 50)
+[node name="Mdpfp" type="AnimatedSprite2D" parent="DialogManager/Panel"]
+position = Vector2(-46, 50)
 scale = Vector2(0.78058803, 0.78058803)
-texture = ExtResource("3_yqatb")
+sprite_frames = SubResource("SpriteFrames_5t5tq")
+autoplay = "default"

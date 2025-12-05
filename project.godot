@@ -14,13 +14,14 @@ config/name="testproj"
 run/main_scene="uid://bdbypo6y24eb"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/show_image=false
-config/icon="res://icon.svg"
+config/icon="uid://be78vpkjekn5x"
 
 [autoload]
 
 Game="res://Scripts/game_state.gd"
 DialogManager="*res://Scripts/dialog_manager.gd"
 Transition="*res://Scripts/Transition.gd"
+AudioManager="*res://Scripts/audio_manager.gd"
 
 [global]
 
