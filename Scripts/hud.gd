@@ -3,33 +3,24 @@ extends CanvasLayer
 @onready var fragments_label: Label = $Control/CoinsLabel
 
 func _ready() -> void:
-	print("HUD: ready - looking for Game node")
-	var cs = get_tree().get_current_scene()
-	var game = null
-	if cs and cs.has_node("Game"):
-		game = cs.get_node("Game")
-	# fallback to autoload
-	if game == null:
-		game = get_node_or_null("/root/Game")
-
-	if game and game.has_method("get_coins"):
-		fragments_label.text = "Fragments: %d" % game.get_coins()
-	if game:
-		print("HUD: connected to Game; connecting to coins_changed signal")
-		game.connect("coins_changed", Callable(self, "_on_coins_changed"))
-	else:
-		push_warning("HUD: could not find Game node to connect to")
+	print("HUD: ready - connecting to Game autoload")
+	
+	# Initialize the label with current fragments
+	fragments_label.text = "Fragments: %d" % Game.get_fragments()
+	
+	# Connect to the fragments_changed signal
+	print("HUD: connecting to fragments_changed signal")
+	Game.connect("fragments_changed", Callable(self, "_on_fragments_changed"))
 
 	# If a Transition autoload exists, request a fade-in so the scene appears smoothly.
 	if get_tree().root.has_node("Transition"):
 		var transition_node = get_tree().root.get_node("Transition")
 		transition_node.fade_in()
 
-func _on_coins_changed(fragments: int) -> void:
+func _on_fragments_changed(fragments: int) -> void:
 	print("HUD: fragments_changed -> %d" % fragments)
 	if fragments_label:
-		print("HUD: label node = %s, old text = '%s'" % [fragments_label.get_path(), fragments_label.text])
 		fragments_label.text = "Fragments: %d" % fragments
-		print("HUD: label updated, new text = '%s'" % fragments_label.text)
+		print("HUD: label updated to '%s'" % fragments_label.text)
 	else:
 		push_warning("HUD: fragments_label is null when updating")

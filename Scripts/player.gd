@@ -84,8 +84,16 @@ var has_checkpoint: bool = false
 var _input_was_enabled: bool = true
 var _paused_for_dialogue: bool = false
 
+# Mobile controls reference
+var mobile_controls: Node = null
+
 
 func _ready() -> void:
+	# Try to find mobile controls
+	mobile_controls = get_node_or_null("/root/MobileControls")
+	if not mobile_controls:
+		# Try to find in current scene
+		mobile_controls = get_tree().root.get_node_or_null("MobileControls")
 	if has_node("CollisionShape2D"):
 		standing_collision = $CollisionShape2D
 		# record original shape size if it's a RectangleShape2D
@@ -137,6 +145,43 @@ func _ready() -> void:
 			sfx_player = ap
 
 
+# Helper functions for mobile + keyboard input
+func _get_move_axis() -> float:
+	var keyboard = Input.get_axis("left", "right")
+	if mobile_controls and mobile_controls.has_method("get_movement_direction"):
+		var mobile = mobile_controls.get_movement_direction()
+		return mobile if mobile != 0.0 else keyboard
+	return keyboard
+
+func _is_jump_just_pressed() -> bool:
+	var keyboard = Input.is_action_just_pressed("ui_accept")
+	if mobile_controls and mobile_controls.has_method("is_jump_pressed"):
+		return keyboard or mobile_controls.is_jump_pressed()
+	return keyboard
+
+func _is_jump_pressed() -> bool:
+	var keyboard = Input.is_action_pressed("ui_accept")
+	if mobile_controls and mobile_controls.has_method("is_jump_pressed"):
+		return keyboard or mobile_controls.is_jump_pressed()
+	return keyboard
+
+func _is_jump_just_released() -> bool:
+	var keyboard = Input.is_action_just_released("ui_accept")
+	# For mobile, we can't easily detect "just released" so rely on keyboard
+	return keyboard
+
+func _is_dash_just_pressed() -> bool:
+	var keyboard = Input.is_action_just_pressed("dash")
+	if mobile_controls and mobile_controls.has_method("is_dash_pressed"):
+		return keyboard or mobile_controls.is_dash_pressed()
+	return keyboard
+
+func _is_crouch_just_pressed() -> bool:
+	var keyboard = Input.is_action_just_pressed("crouch")
+	if mobile_controls and mobile_controls.has_method("is_crouch_pressed"):
+		return keyboard or mobile_controls.is_crouch_pressed()
+	return keyboard
+
 
 func _physics_process(delta: float) -> void:
 	# Physics always runs so the player continues to be affected by gravity
@@ -185,7 +230,7 @@ func _physics_process(delta: float) -> void:
 			jump_buffer_time_left = 0.0
 
 	# Handle jump hold (variable jump height)
-	if input_enabled and is_holding_jump and jump_hold_time_left > 0.0 and Input.is_action_pressed("ui_accept") and not is_on_floor():
+	if input_enabled and not Game.suppress_jump and is_holding_jump and jump_hold_time_left > 0.0 and _is_jump_pressed() and not is_on_floor():
 		var strength = JUMP_HOLD_STRENGTH
 		if _jump_was_crouched:
 			strength = JUMP_HOLD_STRENGTH_CROUCH
@@ -198,7 +243,7 @@ func _physics_process(delta: float) -> void:
 		jump_hold_time_left = 0.0
 
 	# Handle jump input with coyote time and jump buffering.
-	if input_enabled and Input.is_action_just_pressed("ui_accept"):
+	if input_enabled and not Game.suppress_jump and _is_jump_just_pressed():
 		# If we can jump immediately (on floor or within coyote window), do it.
 		if is_on_floor() or coyote_time_left > 0.0:
 			_do_jump()
@@ -212,7 +257,7 @@ func _physics_process(delta: float) -> void:
 		jump_buffer_time_left = 0.0
 
 	# If jump button released early, cut the upward velocity so jump is smaller
-	if input_enabled and Input.is_action_just_released("ui_accept"):
+	if input_enabled and not Game.suppress_jump and _is_jump_just_released():
 		if is_holding_jump:
 			is_holding_jump = false
 			jump_hold_time_left = 0.0
@@ -221,7 +266,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle crouch input (toggle). Requires InputMap action `crouch`.
 	# Toggle crouch on press so player can hold or lock crouch.
-	if input_enabled and Input.is_action_just_pressed("crouch"):
+	if input_enabled and _is_crouch_just_pressed():
 		is_crouching = not is_crouching
 		if is_crouching:
 			crouch_state = CROUCH_STATE_ENTERING
@@ -249,7 +294,7 @@ func _physics_process(delta: float) -> void:
 
 
 	# Handle dash input (requires an InputMap action named "dash")
-	if input_enabled and Input.is_action_just_pressed("dash") and can_dash:
+	if input_enabled and _is_dash_just_pressed() and can_dash:
 		# Determine dash direction from player input or facing
 		var input_dir := Input.get_axis("left", "right")
 		var dir_x := 0.0
@@ -293,7 +338,7 @@ func _physics_process(delta: float) -> void:
 		# Get the input direction and handle the movement/deceleration.
 		# When input is disabled we keep processing physics but ignore player controls.
 		if input_enabled:
-			var direction := Input.get_axis("left", "right")
+			var direction := _get_move_axis()
 			if direction:
 				velocity.x = direction * SPEED
 				# update facing when player provides horizontal input

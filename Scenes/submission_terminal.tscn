@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm01xfbll11gv"]
+
+[ext_resource type="Script" uid="uid://bssdaw42ktswl" path="res://Scripts/submission_terminal.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bwlc47x4xxwbx" path="res://Assets/end.png" id="2_s8soq"]
+[ext_resource type="FontFile" uid="uid://bx5yalsgmp38n" path="res://Assets/Font/Jersey10-Regular.ttf" id="3_wj56g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_terminal"]
+size = Vector2(138, 114)
+
+[node name="SubmissionTerminal" type="Area2D"]
+script = ExtResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.8, 0.2, 1)
+scale = Vector2(0.37535524, 0.37535524)
+texture = ExtResource("2_s8soq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_terminal")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -79.0
+offset_top = -28.0
+offset_right = 222.0
+offset_bottom = 26.0
+scale = Vector2(0.51913714, 0.51913714)
+theme_override_fonts/font = ExtResource("3_wj56g")
+theme_override_font_sizes/font_size = 49
+text = "Use all Fragments"
+horizontal_alignment = 1

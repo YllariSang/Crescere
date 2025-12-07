@@ -24,21 +24,9 @@ func _on_body_entered(body: Node) -> void:
 	if area:
 		area.monitoring = false
 
-	# First try the current scene (most common case: `Main/Game`)
-	var current_scene = get_tree().get_current_scene()
-	var game = null
-	if current_scene:
-		game = current_scene.get_node_or_null("Game")
-
-	# Fallback to an autoload named `Game` at /root/Game
-	if game == null:
-		game = get_node_or_null("/root/Game")
-
-	if game and game.has_method("add_coin"):
-		print("Coin: player hit, calling Game.add_coin()")
-		game.add_coin()
-	else:
-		push_warning("Coin pickup: no Game node with add_coin() found")
+	# Add fragment to the Game autoload
+	Game.add_fragment(1)
+	print("Fragment collected! Total: %d/%d" % [Game.fragments, Game.total_fragments])
 
 	# Play pickup SFX at the coin's position (create a short-lived player under the current scene)
 	var sfx_path := "res://Assets/Audio/SFX/Pickup.wav"
